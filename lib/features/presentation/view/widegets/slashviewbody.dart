@@ -1,8 +1,41 @@
-import 'package:booklyapp/core/utliz/assets.dart';
 import 'package:flutter/material.dart';
 
-class SplashViewBody extends StatelessWidget {
+import 'logoanimated.dart';
+import 'textanimated.dart';
+
+class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
+
+  @override
+  State<SplashViewBody> createState() => _SplashViewBodyState();
+}
+
+class _SplashViewBodyState extends State<SplashViewBody>
+    with SingleTickerProviderStateMixin {
+  late AnimationController animationController;
+  late Animation<Offset> slideanimation1;
+  late Animation<Offset> slideanimation2;
+
+  @override
+  void initState() {
+    super.initState();
+    animationController = AnimationController(
+        vsync: this, duration: const Duration(milliseconds: 900));
+    slideanimation1 =
+        Tween<Offset>(begin: const Offset(0, 15), end: Offset.zero)
+            .animate(animationController);
+    slideanimation2 =
+        Tween<Offset>(begin: const Offset(-15, 0), end: Offset.zero)
+            .animate(animationController);
+
+    animationController.forward();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    animationController.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -10,13 +43,11 @@ class SplashViewBody extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Image.asset(Assets.imagesLogo),
-        SizedBox(height: 5,),
-        const Text(
-          "For Readers",
-          textAlign: TextAlign.center,
-          style: TextStyle(fontFamily: "GT"),
-        )
+        logoanimated(slideanimation2: slideanimation2),
+        const SizedBox(
+          height: 5,
+        ),
+        textanimated(slideanimation1: slideanimation1)
       ],
     );
   }
