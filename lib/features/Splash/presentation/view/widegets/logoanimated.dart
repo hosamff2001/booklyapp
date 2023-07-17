@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/utliz/assets.dart';
+import '../../../../../core/utliz/assets.dart';
 
 class logoanimated extends StatelessWidget {
   const logoanimated({
@@ -17,7 +17,9 @@ class logoanimated extends StatelessWidget {
       builder: (context,_) {
         return SlideTransition(
           position: slideanimation2,
-          child: Image.asset(Assets.imagesLogo));
+          child: Hero(
+            tag: "Logo",
+            child: Image.asset(Assets.imagesLogo)));
       }
     );
   }
