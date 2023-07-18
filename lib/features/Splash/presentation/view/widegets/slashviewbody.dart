@@ -30,11 +30,11 @@ class _SplashViewBodyState extends State<SplashViewBody>
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        logoanimated(slideanimation2: slideanimation2),
+        Logoanimated(slideanimation2: slideanimation2),
         const SizedBox(
           height: 5,
         ),
-        textanimated(slideanimation1: slideanimation1)
+        Textanimated(slideanimation1: slideanimation1)
       ],
     );
   }
@@ -63,9 +63,9 @@ class _SplashViewBodyState extends State<SplashViewBody>
     Future.delayed(
       const Duration(seconds: 3),
       () {
-        Get.to(const HomePage(),
+        Get.off(const HomeView(),
             transition: Transition.circularReveal,
-            duration: const Duration(milliseconds: 400));
+            duration: const Duration(milliseconds: 1300));
       },
     );
   }

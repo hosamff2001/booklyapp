@@ -1,20 +1,14 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/utliz/assets.dart';
+import 'widgets/homeviewbody.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class HomeView extends StatelessWidget {
+  const HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Hero(
-          tag: "Logo",
-          child: Container(
-              padding: EdgeInsets.all(8),
-              width: 200,
-              height: 100,
-              child: Image.asset(Assets.imagesLogo))),
+    return const Scaffold(
+      body: HomeViewBody() ,
     );
   }
 }
