@@ -1,6 +1,6 @@
-import 'package:booklyapp/features/home/presentation/view/homescreen.dart';
+import 'package:booklyapp/core/utliz/routers.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 
 import 'logoanimated.dart';
 import 'textanimated.dart';
@@ -24,6 +24,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
     initanimation();
     navagettohome();
   }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -39,13 +40,11 @@ class _SplashViewBodyState extends State<SplashViewBody>
     );
   }
 
-
   @override
   void dispose() {
     super.dispose();
     animationController.dispose();
   }
-
 
   void initanimation() {
     animationController = AnimationController(
@@ -59,13 +58,17 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
     animationController.forward();
   }
+
   void navagettohome() {
     Future.delayed(
       const Duration(seconds: 3),
       () {
-        Get.off(const HomeView(),
-            transition: Transition.circularReveal,
-            duration: const Duration(milliseconds: 1300));
+        // Get.off(const HomeView(),
+        //     transition: Transition.circularReveal,
+        //     duration: const Duration(milliseconds: 1300));
+        
+         GoRouter.of(context).pushReplacement(AppRouter.kHomePath, );
+        
       },
     );
   }
