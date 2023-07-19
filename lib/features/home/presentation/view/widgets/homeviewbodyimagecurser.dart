@@ -1,5 +1,6 @@
-import 'package:booklyapp/core/utliz/assets.dart';
 import 'package:flutter/material.dart';
+
+import 'customimagebuilder.dart';
 
 class HomeViewBodyImageCurser extends StatelessWidget {
   const HomeViewBodyImageCurser({super.key});
@@ -13,23 +14,11 @@ class HomeViewBodyImageCurser extends StatelessWidget {
         physics: const ClampingScrollPhysics(),
         itemCount: 15,
         itemBuilder: (context, index) {
-          return builditemcurser();
+          return CustomImageBuilder();
         },
       ),
     );
   }
 
-  Padding builditemcurser() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8.0),
-      child: AspectRatio(
-          aspectRatio: 2 / 3,
-          child: Container(
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(14),
-                image: const DecorationImage(
-                    image: AssetImage(Assets.imagesTestImage))),
-          )),
-    );
-  }
+  
 }

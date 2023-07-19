@@ -18,7 +18,7 @@ class Logoanimated extends StatelessWidget {
         return SlideTransition(
           position: slideanimation2,
           child: Hero(
-            
+            transitionOnUserGestures: true,
             tag: "Logo",
             child: Image.asset(Assets.imagesLogo)));
       }
