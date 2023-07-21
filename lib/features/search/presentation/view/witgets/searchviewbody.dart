@@ -1,10 +1,26 @@
-import 'package:booklyapp/features/home/presentation/view/widgets/homeviewbodylistviewtests.dart';
+import 'package:booklyapp/features/search/presentation/view/witgets/searchviewbodyfiledsection.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../../core/utliz/assets.dart';
 import '../../../../../core/utliz/routers.dart';
-import 'homeviewbodyrating.dart';
+import '../../../../home/presentation/view/widgets/homeviewbodylistviewtests.dart';
+import '../../../../home/presentation/view/widgets/homeviewbodyrating.dart';
+
+class SearchViewBody extends StatelessWidget {
+  const SearchViewBody({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SearchViewBodyFiledSection(),
+        Expanded(child: HomeViewBodyListView())
+      ],
+    );
+  }
+}
 
 class HomeViewBodyListView extends StatelessWidget {
   const HomeViewBodyListView({super.key});
@@ -13,8 +29,6 @@ class HomeViewBodyListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
         padding: EdgeInsets.zero,
-        shrinkWrap: true,
-        physics: const NeverScrollableScrollPhysics(),
         itemCount: 14,
         itemBuilder: (context, index) {
           return InkWell(

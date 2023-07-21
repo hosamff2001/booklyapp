@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../constance.dart';
 
 abstract class Styles {
-    static const textStyle18 = TextStyle(
+  static const textStyle18 = TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.w600,
   );

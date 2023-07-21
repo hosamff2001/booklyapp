@@ -13,15 +13,14 @@ class Logoanimated extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
-      animation: slideanimation2,
-      builder: (context,_) {
-        return SlideTransition(
-          position: slideanimation2,
-          child: Hero(
-            transitionOnUserGestures: true,
-            tag: "Logo",
-            child: Image.asset(Assets.imagesLogo)));
-      }
-    );
+        animation: slideanimation2,
+        builder: (context, _) {
+          return SlideTransition(
+              position: slideanimation2,
+              child: Hero(
+                  transitionOnUserGestures: true,
+                  tag: "Logo",
+                  child: Image.asset(Assets.imagesLogo)));
+        });
   }
 }

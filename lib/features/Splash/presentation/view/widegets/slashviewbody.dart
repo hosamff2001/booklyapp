@@ -66,9 +66,10 @@ class _SplashViewBodyState extends State<SplashViewBody>
         // Get.off(const HomeView(),
         //     transition: Transition.circularReveal,
         //     duration: const Duration(milliseconds: 1300));
-        
-         GoRouter.of(context).pushReplacement(AppRouter.kHomePath, );
-        
+
+        GoRouter.of(context).pushReplacement(
+          AppRouter.kHomePath,
+        );
       },
     );
   }

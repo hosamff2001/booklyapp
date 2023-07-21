@@ -9,9 +9,9 @@ class BookDetilsViewBodyAppBar extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 12.0),
       child: Row(
         children: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.close)),
-          Spacer(),
-          IconButton(onPressed: () {}, icon: Icon(Icons.shopping_cart)),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.close)),
+          const Spacer(),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.shopping_cart)),
         ],
       ),
     );
