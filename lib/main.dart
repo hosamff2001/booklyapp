@@ -1,9 +1,14 @@
-import 'package:booklyapp/constance.dart';
+import 'constance.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'core/utliz/dio.dart';
 import 'core/utliz/routers.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  DioHelper.init();
+  
   runApp(const BooklyApp());
 }
 
