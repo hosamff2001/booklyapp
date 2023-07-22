@@ -4,8 +4,6 @@ import 'package:go_router/go_router.dart';
 
 import '../../../../../core/utliz/assets.dart';
 import '../../../../../core/utliz/routers.dart';
-import '../../../../home/presentation/view/widgets/homeviewbodylistviewtests.dart';
-import '../../../../home/presentation/view/widgets/homeviewbodyrating.dart';
 
 class SearchViewBody extends StatelessWidget {
   const SearchViewBody({super.key});
@@ -56,15 +54,15 @@ class HomeViewBodyListView extends StatelessWidget {
                 const SizedBox(
                   width: 30,
                 ),
-                Expanded(
+                const Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      BookTexts(index: index),
-                      const SizedBox(
+                      // BookTexts(index: index),
+                      SizedBox(
                         height: 3,
                       ),
-                      const HomeViewBodyRating()
+                      // HomeViewBodyRating()
                     ],
                   ),
                 ),

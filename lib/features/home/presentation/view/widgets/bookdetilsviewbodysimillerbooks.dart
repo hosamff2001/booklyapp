@@ -1,5 +1,9 @@
+import 'package:booklyapp/features/home/presentation/manger/similerbooks/similer_books_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../../core/witgets/customerrorimage.dart';
+import '../../../../../core/witgets/customloadingimage.dart';
 import 'customimagebuilder.dart';
 
 class SimillerBookView extends StatelessWidget {
@@ -7,16 +11,27 @@ class SimillerBookView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.sizeOf(context).height * 0.15,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        physics: const BouncingScrollPhysics(),
-        itemCount: 15,
-        itemBuilder: (context, index) {
-          return const CustomImageBuilder();
-        },
-      ),
+    return BlocBuilder<SimilerBooksCubit, SimilerBooksState>(
+      builder: (context, state) {
+        if (state is SimilerBooksSuccerss) {
+  return SizedBox(
+    height: MediaQuery.sizeOf(context).height * 0.15,
+    child: ListView.builder(
+      scrollDirection: Axis.horizontal,
+      physics: const BouncingScrollPhysics(),
+      itemCount: state.books.length,
+      itemBuilder: (context, index) {
+        return  CustomImageBuilder(
+            imageurl:  state.books[index].volumeInfo.imageLinks.thumbnail);
+      },
+    ),
+  );
+}else if (state is SimilerBooksError) {
+          return CustomErrorImage(errormesage: state.errormessage);
+        } else {
+          return const CustomLoadingImage();
+        }
+      },
     );
   }
 }

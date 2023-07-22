@@ -1,3 +1,5 @@
+import 'package:booklyapp/constance.dart';
+import 'package:booklyapp/features/home/data/model/book_model/book_model.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utliz/stayles.dart';
@@ -6,8 +8,8 @@ import 'bookrating.dart';
 import 'customimagebuilder.dart';
 
 class BookDetilesSection extends StatelessWidget {
-  const BookDetilesSection({super.key});
-
+  const BookDetilesSection({super.key, required this.book});
+  final BookModel book;
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.sizeOf(context).width;
@@ -15,20 +17,22 @@ class BookDetilesSection extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * 0.32),
-          child: const CustomImageBuilder(),
+          child: CustomImageBuilder(
+              imageurl: book.volumeInfo.imageLinks.thumbnail),
         ),
         const SizedBox(
-          height: 27,
+          height: 20,
         ),
-        const Text(
-          "The Jungle Book",
-          style: Styles.textStyle30,
+        Text(
+          book.volumeInfo.title as String,
+          style: Styles.textStyle28,
+          textAlign: TextAlign.center,
         ),
         const SizedBox(
           height: 6,
         ),
         Text(
-          "Rudyard Kipling",
+          getauthors(book.volumeInfo.authors!),
           style: Styles.textStyle18.copyWith(
               fontStyle: FontStyle.italic,
               color: Colors.white.withOpacity(0.7)),
@@ -36,7 +40,9 @@ class BookDetilesSection extends StatelessWidget {
         const SizedBox(
           height: 12,
         ),
-        const BookRating(),
+        BookRating(
+            count: book.volumeInfo.ratingcount ?? 0,
+            rating: book.volumeInfo.rating ?? 0),
         const SizedBox(
           height: 15,
         ),

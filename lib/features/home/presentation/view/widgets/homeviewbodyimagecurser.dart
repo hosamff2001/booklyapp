@@ -19,9 +19,9 @@ class HomeViewBodyImageCurser extends StatelessWidget {
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               physics: const ClampingScrollPhysics(),
-              itemCount: 15,
+              itemCount: state.books.length,
               itemBuilder: (context, index) {
-                return const CustomImageBuilder();
+                return  CustomImageBuilder(imageurl:  state.books[index].volumeInfo.imageLinks.thumbnail);
               },
             ),
           );

@@ -4,19 +4,20 @@ import '../../../../../core/utliz/stayles.dart';
 import 'bookrating.dart';
 
 class HomeViewBodyRating extends StatelessWidget {
-  const HomeViewBodyRating({super.key});
-
+  const HomeViewBodyRating({super.key, required this.rating, required this.count});
+  final int rating;
+  final int count;
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Text(
-          "19.99 €",
+          "Free",
           style: Styles.textStyle20.copyWith(fontWeight: FontWeight.bold),
         ),
         const Spacer(),
-        const BookRating()
+         BookRating(count: count,rating: rating)
       ],
     );
   }

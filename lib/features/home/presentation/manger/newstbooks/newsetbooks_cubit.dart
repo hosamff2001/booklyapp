@@ -11,7 +11,7 @@ class NewsetbooksCubit extends Cubit<NewsetbooksState> {
 
   final HomeRepos homeRepos;
 
-  Future<void> featchfuturebooks() async {
+  Future<void> featchnewestbooks() async {
     emit(NewsetbooksLoading());
 
     var response = await homeRepos.featurenewestbooks();

@@ -4,9 +4,10 @@ import '../../../../../constance.dart';
 import '../../../../../core/utliz/stayles.dart';
 
 class BookTexts extends StatelessWidget {
-  final int index;
+  final List<String> auther;
+  final String title;
 
-  const BookTexts({super.key, required this.index});
+  const BookTexts({super.key, required this.auther, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class BookTexts extends StatelessWidget {
         SizedBox(
           width: MediaQuery.sizeOf(context).width * 0.5,
           child: Text(
-            "Harry potter and the Globlel of Fire",
+            title,
             style: Styles.textStyle20.copyWith(fontFamily: Gtfamilyfont),
             maxLines: 2,
             overflow: TextOverflow.fade,
@@ -27,7 +28,7 @@ class BookTexts extends StatelessWidget {
         SizedBox(
           width: MediaQuery.sizeOf(context).width * 0.5,
           child: Text(
-            "J.K Rowling ${index + 1}",
+            getauthors(auther),
             style: Styles.textStyle14,
             maxLines: 1,
             overflow: TextOverflow.fade,
