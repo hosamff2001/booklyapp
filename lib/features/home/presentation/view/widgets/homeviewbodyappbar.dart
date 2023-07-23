@@ -1,9 +1,9 @@
-import 'package:booklyapp/core/utliz/routers.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../../core/utliz/assets.dart';
+import '../../../../../core/utliz/routers.dart';
 
 class HomeViewBodyAppBar extends StatelessWidget {
   const HomeViewBodyAppBar({super.key});

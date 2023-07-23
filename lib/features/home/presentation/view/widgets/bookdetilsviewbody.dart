@@ -1,5 +1,5 @@
-import 'package:booklyapp/features/home/data/model/book_model/book_model.dart';
 
+import '../../../data/model/book_model/book_model.dart';
 import 'bookdetilssection.dart';
 import 'package:flutter/material.dart';
 import 'bookdetailsviewbodyappbar.dart';

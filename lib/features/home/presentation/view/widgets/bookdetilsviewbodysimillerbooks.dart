@@ -1,9 +1,9 @@
-import 'package:booklyapp/features/home/presentation/manger/similerbooks/similer_books_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/witgets/customerrorimage.dart';
 import '../../../../../core/witgets/customloadingimage.dart';
+import '../../manger/similerbooks/similer_books_cubit.dart';
 import 'customimagebuilder.dart';
 
 class SimillerBookView extends StatelessWidget {

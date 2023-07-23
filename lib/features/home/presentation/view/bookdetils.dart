@@ -1,6 +1,7 @@
-import 'package:booklyapp/features/home/data/model/book_model/book_model.dart';
-import 'package:booklyapp/features/home/presentation/view/widgets/bookdetilsviewbody.dart';
 import 'package:flutter/material.dart';
+
+import '../../data/model/book_model/book_model.dart';
+import 'widgets/bookdetilsviewbody.dart';
 
 class BookDetils extends StatelessWidget {
   const BookDetils({super.key, required this.book});

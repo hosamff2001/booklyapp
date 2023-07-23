@@ -1,9 +1,11 @@
-import 'package:booklyapp/core/error/failers.dart';
-import 'package:booklyapp/core/utliz/dio.dart';
-import 'package:booklyapp/features/home/data/model/book_model/book_model.dart';
-import 'package:booklyapp/features/home/data/rebos/homerepos.dart';
+
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+
+import '../../../../core/error/failers.dart';
+import '../../../../core/utliz/dio.dart';
+import '../model/book_model/book_model.dart';
+import 'homerepos.dart';
 
 class HomeReposimple implements HomeRepos {
   @override

@@ -1,8 +1,9 @@
-import 'package:booklyapp/constance.dart';
-import 'package:booklyapp/features/home/data/model/book_model/book_model.dart';
+
 import 'package:flutter/material.dart';
 
+import '../../../../../constance.dart';
 import '../../../../../core/utliz/stayles.dart';
+import '../../../data/model/book_model/book_model.dart';
 import 'booddetailsbodyactionbutton.dart';
 import 'bookrating.dart';
 import 'customimagebuilder.dart';

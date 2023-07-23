@@ -1,5 +1,6 @@
-import 'package:booklyapp/core/utliz/stayles.dart';
 import 'package:flutter/material.dart';
+
+import '../utliz/stayles.dart';
 
 class CustomErrorImage extends StatelessWidget {
   const CustomErrorImage({super.key,required this.errormesage});

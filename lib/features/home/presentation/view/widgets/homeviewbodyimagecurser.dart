@@ -1,11 +1,11 @@
-import 'package:booklyapp/core/utliz/routers.dart';
-import 'package:booklyapp/core/witgets/customerrorimage.dart';
-import 'package:booklyapp/core/witgets/customloadingimage.dart';
-import 'package:booklyapp/features/home/presentation/manger/featurebooks/featurebooks_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../../../core/utliz/routers.dart';
+import '../../../../../core/witgets/customerrorimage.dart';
+import '../../../../../core/witgets/customloadingimage.dart';
+import '../../manger/featurebooks/featurebooks_cubit.dart';
 import 'customimagebuilder.dart';
 
 class HomeViewBodyImageCurser extends StatelessWidget {

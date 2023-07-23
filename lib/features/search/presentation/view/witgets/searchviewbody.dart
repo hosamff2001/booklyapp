@@ -1,4 +1,3 @@
-import 'package:booklyapp/features/search/presentation/view/witgets/searchviewbodydescreption.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -6,6 +5,7 @@ import '../../../../../core/witgets/customerrorimage.dart';
 import '../../../../../core/witgets/customloadingimage.dart';
 
 import '../../manger/searchbook_cubit.dart';
+import 'searchviewbodydescreption.dart';
 import 'searchviewbodyfiledsection.dart';
 
 class SearchViewBody extends StatelessWidget {

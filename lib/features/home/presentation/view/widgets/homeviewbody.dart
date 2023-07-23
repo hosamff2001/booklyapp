@@ -1,9 +1,9 @@
-import 'package:booklyapp/core/utliz/stayles.dart';
-import 'package:booklyapp/features/home/presentation/view/widgets/homeviewbodylistview.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../core/utliz/stayles.dart';
 import 'homeviewbodyappbar.dart';
 import 'homeviewbodyimagecurser.dart';
+import 'homeviewbodylistview.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});

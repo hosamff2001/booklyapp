@@ -1,6 +1,6 @@
-import 'package:booklyapp/constance.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../constance.dart';
 import 'witgets/searchviewbody.dart';
 
 class SearchView extends StatelessWidget {

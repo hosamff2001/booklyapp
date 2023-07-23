@@ -1,6 +1,3 @@
-import 'package:booklyapp/features/home/data/rebos/homereposimplement.dart';
-import 'package:booklyapp/features/home/presentation/manger/featurebooks/featurebooks_cubit.dart';
-import 'package:booklyapp/features/home/presentation/manger/newstbooks/newsetbooks_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'constance.dart';
@@ -9,6 +6,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'core/utliz/dio.dart';
 import 'core/utliz/routers.dart';
 import 'core/utliz/serveslocated.dart';
+import 'features/home/data/rebos/homereposimplement.dart';
+import 'features/home/presentation/manger/featurebooks/featurebooks_cubit.dart';
+import 'features/home/presentation/manger/newstbooks/newsetbooks_cubit.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
