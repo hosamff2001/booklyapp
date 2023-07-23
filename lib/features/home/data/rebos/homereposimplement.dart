@@ -58,10 +58,10 @@ class HomeReposimple implements HomeRepos {
       {required String category}) async {
     try {
       var value = await DioHelper.get(url: "volumes", query: {
-        "q": "coding",
+        "q":category=="Computing"?"programming":"codeing",
         "Filtering": "free-ebooks",
         "subject": category,
-        "Sorting": "relevance"
+      
       });
       List<BookModel> books = [];
       for (var item in value.data["items"]) {

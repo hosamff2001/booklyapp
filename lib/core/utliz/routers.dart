@@ -5,6 +5,8 @@ import 'package:booklyapp/features/home/data/rebos/homereposimplement.dart';
 import 'package:booklyapp/features/home/presentation/manger/similerbooks/similer_books_cubit.dart';
 import 'package:booklyapp/features/home/presentation/view/bookdetils.dart';
 import 'package:booklyapp/features/home/presentation/view/homescreen.dart';
+import 'package:booklyapp/features/search/data/repo/searchrepoimple.dart';
+import 'package:booklyapp/features/search/presentation/manger/searchbook_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -26,7 +28,10 @@ abstract class AppRouter {
       GoRoute(
         path: kSearchPath,
         builder: (BuildContext context, GoRouterState state) {
-          return const SearchView();
+          return BlocProvider(
+            create: (context) => SearchbookCubit(getIt.get<Searchrepoimple>()),
+            child: const SearchView(),
+          );
         },
       ),
       GoRoute(
@@ -38,9 +43,12 @@ abstract class AppRouter {
       GoRoute(
         path: kBookDetailsPath,
         builder: (BuildContext context, GoRouterState state) {
-          return  BlocProvider(
-            create: (context) => SimilerBooksCubit(getIt.get<HomeReposimple>())..featuresimilerbooks(category: (state.extra as BookModel).volumeInfo.categories![0]),
-            child: BookDetils(book:state.extra as BookModel),
+          return BlocProvider(
+            create: (context) => SimilerBooksCubit(getIt.get<HomeReposimple>())
+              ..featuresimilerbooks(
+                  category:
+                      (state.extra as BookModel).volumeInfo.categories![0]),
+            child: BookDetils(book: state.extra as BookModel),
           );
         },
       ),

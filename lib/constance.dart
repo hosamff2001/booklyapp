@@ -11,3 +11,7 @@ String getauthors(List<String> authors) {
   }
   return result.substring(0, result.length - 2);
 }
+void customsnakbar({required context,required String text}) {
+   ScaffoldMessenger.of(context)
+      .showSnackBar( SnackBar(content: Text(text)));
+}

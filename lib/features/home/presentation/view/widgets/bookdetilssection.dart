@@ -18,7 +18,7 @@ class BookDetilesSection extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * 0.32),
           child: CustomImageBuilder(
-              imageurl: book.volumeInfo.imageLinks.thumbnail),
+              imageurl: book.volumeInfo.imageLinks?.thumbnail??""),
         ),
         const SizedBox(
           height: 20,
@@ -46,7 +46,7 @@ class BookDetilesSection extends StatelessWidget {
         const SizedBox(
           height: 15,
         ),
-        const BookActionButton(),
+         BookActionButton(book: book),
       ],
     );
   }

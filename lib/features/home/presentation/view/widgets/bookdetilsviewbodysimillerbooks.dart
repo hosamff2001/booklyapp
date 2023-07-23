@@ -22,7 +22,7 @@ class SimillerBookView extends StatelessWidget {
       itemCount: state.books.length,
       itemBuilder: (context, index) {
         return  CustomImageBuilder(
-            imageurl:  state.books[index].volumeInfo.imageLinks.thumbnail);
+            imageurl:  state.books[index].volumeInfo.imageLinks?.thumbnail??"");
       },
     ),
   );

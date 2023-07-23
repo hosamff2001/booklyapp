@@ -40,7 +40,7 @@ class HomeViewBodyListView extends StatelessWidget {
                             height: 100,
                             child: CustomImageBuilder(
                                 imageurl: state.books[index].volumeInfo
-                                    .imageLinks.thumbnail)),
+                                    .imageLinks?.thumbnail??"")),
                       ),
                       const SizedBox(
                         width: 30,
@@ -53,7 +53,7 @@ class HomeViewBodyListView extends StatelessWidget {
                             const SizedBox(
                               height: 3,
                             ),
-                             HomeViewBodyRating(count: state.books[index].volumeInfo.ratingcount??0,rating: state.books[index].volumeInfo.rating??0,)
+                             HomeViewBodyRating(count: state.books[index].volumeInfo.ratingcount??0,rating: state.books[index].volumeInfo.rating ?? 0,)
                           ],
                         ),
                       ),

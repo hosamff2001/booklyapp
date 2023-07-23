@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../core/functions/urllancher.dart';
 import '../../../../../core/utliz/stayles.dart';
 import '../../../../../core/witgets/custombutton.dart';
+import '../../../data/model/book_model/book_model.dart';
 
 class BookActionButton extends StatelessWidget {
-  const BookActionButton({super.key});
-
+  const BookActionButton({super.key, required this.book});
+  final BookModel book;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -14,6 +16,7 @@ class BookActionButton extends StatelessWidget {
         children: [
           Expanded(
             child: CustomButton(
+              onPressed: () {},
               text: "Get It Now",
               backgroundcolor: Colors.white,
               textstyle: Styles.textStyle18.copyWith(color: Colors.black),
@@ -24,6 +27,9 @@ class BookActionButton extends StatelessWidget {
           ),
           Expanded(
             child: CustomButton(
+              onPressed: () {
+                customlaunchurl(context,book.volumeInfo.infoLink!);
+              },
               text: "Free preview",
               backgroundcolor: const Color(0xffEF8262),
               textstyle: Styles.textStyle16
